@@ -1,0 +1,19 @@
+@startuml
+start
+:ввод q, r, b, c, d, n;
+if (n < 2) then (да)
+:вывод "n должно быть ≥ 2";
+stop
+endif
+:x0 = c;
+:x1 = d;
+:i = 2;
+while (i <= n) is(да)
+:x = q * x1 + r * x0 + b;
+:x0 = x1;
+:x1 = x;
+:i = i + 1;
+endwhile(нет)
+:вывод "x" + n + " = " + x1;
+stop
+@enduml

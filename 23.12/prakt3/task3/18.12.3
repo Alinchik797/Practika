@@ -1,0 +1,26 @@
+@startuml
+start
+:Ввод num1,num2,num3;
+
+if (num1 > num2?) then (yes)
+  if (num1 > num3?) then (yes)
+    :max1 = num1;
+    :max2 = Math.max(num2, num3);
+  else (no)
+    :max1 = num3;
+    :max2 = num1;
+  endif
+else (no)
+  if (num2 > num3?) then (yes)
+    :max1 = num2;
+    :max2 = Math.max(num1, num3);
+  else (no)
+    :max1 = num3;
+    :max2 = num2;
+  endif
+endif
+
+:sum = max1 + max2;
+:Вывод "Сумма двух наибольших: " + sum;
+stop
+@enduml

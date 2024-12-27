@@ -1,0 +1,16 @@
+@startuml
+start
+: Вывод X,Y;
+
+if ((X*X + Y*Y == 144) || (Y == X)?) then (yes)
+  :Вывод "На границе";
+else (no)
+  if ((Y < X) && (X*X + Y*Y < 144)?) then (yes)
+    :Вывод "Да";
+  else (no)
+    :Вывод "Нет";
+  endif
+endif
+
+stop
+@enduml

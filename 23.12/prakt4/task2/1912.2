@@ -1,0 +1,39 @@
+@startuml
+start
+:Ввод D, M;
+
+switch (D)
+case (6)
+:H = "шестерка";
+case (7)
+:H = "семерка";
+case (8)
+:H = "восьмерка";
+case (9)
+:H = "девятка";
+case (10)
+:H = "десятка";
+case (11)
+:H = "валет";
+case (12)
+:H = "дама";
+case (13)
+:H = "король";
+case (14)
+:H = "туз";
+endswitch
+
+switch (M)
+case (1)
+:H = H + " пик";
+case (2)
+:H = H + " треф";
+case (3)
+:H = H + " бубен";
+case (4)
+:H = H + " червей";
+endswitch
+
+:Вывод H;
+stop
+@enduml

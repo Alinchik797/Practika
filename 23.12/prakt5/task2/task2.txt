@@ -1,0 +1,17 @@
+@startuml
+
+start
+if (текст пустой?) then (yes)
+endif
+  :x = Integer.parseInt(текст);
+  if (x >= 0 && x <= 300?) then (yes)
+    if (x == 0?) then (yes)
+   
+    endif
+     :Очистить numberTextField;
+  else (no)
+    :Показать ошибку "Введите натуральное число от 0 до 300.";
+  endif
+  :Показать ошибку "Пожалуйста, введите целое число.";
+stop
+@enduml

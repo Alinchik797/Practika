@@ -1,0 +1,19 @@
+@startuml
+start
+:Ввод a, b, m;
+
+
+: X = A * B * B - sin(B * B) + M * B;
+
+if (A * B * B - sin(B * B) + M * B > 0?) then (yes)
+  if (X > PI?) then (yes)
+     :y = 1 - exp(-A * X) * sin(A * X + B);
+  else if (X >= -PI && X <= PI?) then (yes)
+    :y = 1 - exp(-A * X) * (A * X + B);
+  else (no)
+    :y = 1 - (exp(-A * X) + exp(-B * X));
+  endif
+   :Вывод  y: " + y;
+  endif 
+stop
+@enduml

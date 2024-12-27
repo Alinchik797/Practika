@@ -1,0 +1,44 @@
+@startuml
+' Схема для OkButtonOnAction
+start
+:Получить список scores из dataListView;
+
+if (scores.isEmpty()?) then (yes)
+  :Вывести "Нет данных об участниках.";
+  stop
+endif
+
+:maxScore = 0;
+:hasZeroScore = false;
+  if (score > maxScore?) then (yes)
+    :maxScore = score;
+  endif
+  if (score == 0?) then (yes)
+    :hasZeroScore = true;
+  endif
+
+:Вывести "ответил на " + maxScore + " вопросов.\n" + (hasZeroScore ? "YES" : "NO");
+stop
+
+' Схема для addButtonOnAction
+start
+:Получить текст из numberTextField;
+if (текст пустой?) then (yes)
+  stop
+endif
+  :x = Integer.parseInt(текст);
+  if (x >= 0 && x <= 20?) then (yes)
+    :Добавить x в dataListView;
+    :Очистить numberTextField;
+  else (no)
+    :Показать ошибку "Введите количество правильных ответов от 0 до 20";
+  endif
+  :Показать ошибку "Пожалуйста, введите целое число";
+stop
+
+' Схема для cancelButtonOnAction
+start
+:Очистить dataListView;
+:Очистить answerLabel;
+stop
+@enduml

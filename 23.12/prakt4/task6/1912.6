@@ -1,0 +1,29 @@
+@startuml
+start
+
+:Ввод n;
+
+if (n <= 0?) then (yes)
+    :Вывод "N должно быть больше 0.";
+    stop
+else (no)
+endif
+
+:ok = false;
+
+while (n > 0) is (yes)
+    :digit = n % 10;
+
+    if (digit % 2 != 0?) then (yes)
+        :ok = true;
+        break
+    else (no)
+    endif
+
+    :n /= 10;
+endwhile
+
+:Вывод ok;
+
+stop
+@enduml

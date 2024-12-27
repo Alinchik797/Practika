@@ -1,0 +1,19 @@
+@startuml
+start
+:ввод X;
+:ввод N;
+:Rez = 0;
+:pow = 1;
+:factorial = 1;
+while (i <= 2 * N + 1) is(да)
+:factorial *= i;
+:pow *= X;
+if (i % 2 != 0) then (да)
+:Rez += pow / factorial;
+:pow *= -1;
+endif
+:i = i + 1;
+endwhile(нет)
+:вывод Rez;
+stop
+@enduml

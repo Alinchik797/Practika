@@ -1,0 +1,21 @@
+@startuml
+start
+:Ввод N, A, B;
+
+switch (N)
+case (1)
+:Результат: A + B;
+case (2)
+:Результат: A - B;
+case (3)
+:Результат: A * B;
+case (4)
+if (B != 0) then (yes)
+:Результат: A / B;
+else (no)
+:Деление на ноль невозможно;
+endif
+endswitch
+
+stop
+@enduml

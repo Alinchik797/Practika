@@ -1,0 +1,40 @@
+@startuml
+start
+:Ввод n, v;
+
+if (n < 1 || n > 4?) then (yes)
+:Номер элемента должен быть от 1 до 4.;
+stop
+else (no)
+endif
+
+switch (n)
+case (1)
+:a = v;
+:c = a * sqrt(2);
+:h = c / 2;
+:s = c * h / 2;
+case (2)
+:c = v;
+:a = c / sqrt(2);
+:h = c / 2;
+:s = c * h / 2;
+case(3)
+:h = v;
+:c = 2 * h;
+:a = c / sqrt(2);
+:s = c * h / 2;
+case(4)
+:s = v;
+:c = sqrt(4 * s);
+:a = c / sqrt(2);
+:h = c / 2;
+endswitch
+
+:"a = " + a;
+:"c = " + c;
+:"h = " + h;
+:"S = " + s;
+
+stop
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+start
+:Вывод N;
+
+
+if (N > 0?) then (yes)
+  :temp = 1;
+  while (temp < N?)
+    :temp = temp * 2;
+  endwhile
+  :isPowerOfThree = (temp == N);
+endif
+
+:Вывести isPowerOfThree;
+stop
+@enduml

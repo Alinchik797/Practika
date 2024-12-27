@@ -1,0 +1,20 @@
+@startuml
+start
+  :pricePerKg = Double.parseDouble(текст);
+  if (pricePerKg > 0?) then (yes)
+    :Очистить numberTextField;
+  else (no)
+    : "Ошибка ввода, Цена должна быть положительной";
+  endif
+ : "Ошибка ввода, Введите корректное число";
+:Очистить список prices;
+:Создать пустую StringBuilder result;
+:weight = 0.1;
+while (weight <= 1.0?)
+  :cost = pricePerKg * weight;
+  :("%.1f кг - %.2f", weight, cost);
+  :weight = weight + 0.1;
+endwhile
+:Вывести result;
+stop
+@enduml

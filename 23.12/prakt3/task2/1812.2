@@ -1,0 +1,27 @@
+@startuml
+start
+: Ввод N,N2,N3;
+:countPositive = 0;
+:countNegative = 0;
+
+if (N > 0?) then (yes)
+  :countPositive = countPositive + 1;
+else if (N < 0?) then (yes)
+  :countNegative = countNegative + 1;
+endif
+
+if (N2 > 0?) then (yes)
+  :countPositive = countPositive + 1;
+else if (N2 < 0?) then (yes)
+  :countNegative = countNegative + 1;
+endif
+
+if (N3 > 0?) then (yes)
+  :countPositive = countPositive + 1;
+else if (N3 < 0?) then (yes)
+  :countNegative = countNegative + 1;
+endif
+
+:Вывод "Положительных: " + countPositive + ", Отрицательных: " + countNegative;
+stop
+@enduml
